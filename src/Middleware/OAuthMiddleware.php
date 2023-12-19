@@ -65,7 +65,7 @@ class OAuthMiddleware
                 ) {
                     $token = $this->getAccessToken();
                     if ($token !== null) {
-                        return $handler($request->withAddedHeader('Authorization', 'Bearer '.$token->getToken()), $options);
+                        return $handler($request->withHeader('Authorization', 'Bearer '.$token->getToken()), $options);
                     }
                 }
 
